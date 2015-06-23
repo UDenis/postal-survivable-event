@@ -65,5 +65,7 @@
         envelope.channel = this.channel;
         this.bus.document(envelope, callback);
     }
+
+    return postal;
 }));
 
