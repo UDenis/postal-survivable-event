@@ -20,7 +20,6 @@ gulp.task("combine", function() {
         .pipe(beautify({ indentSize: 4, preserveNewlines: false }))
         .pipe(gulp.dest("./lib/"))
         .pipe(uglify({ compress: { negate_iife: false }}))
-        .pipe(header(banner, { pkg : pkg }))
         .pipe(rename("postal-survivable-event.min.js"))
         .pipe(gulp.dest("./lib/"));
 });
@@ -30,7 +29,7 @@ gulp.task("default", function() {
 });
 
 gulp.task("report", function () {
-    gulp.src("./lib/postal-survivable-event.js")
+    gulp.src("./lib/postal-survivable-eve.js")
         .pipe(plato("report"));
 });
 
