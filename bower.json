@@ -1,6 +1,6 @@
 {
   "name": "postal-survivable-event",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Denis Maslov",
   "main": [
     "lib/postal-survivable-event.min.js",
