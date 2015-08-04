@@ -44,10 +44,12 @@
     var oldSubscribe = postal.subscribe;
     postal.subscribe = function (options) {
         var subscription = oldSubscribe.apply(this, arguments);
-        var env = getEvent(options);
-        if (env) {
-            subscription.invokeSubscriber(env.data, env);
-        }
+        setTimeout(function () {
+            var env = getEvent(options);
+            if (env) {
+                subscription.invokeSubscriber(env.data, env);
+            }
+        }, 0);
         return subscription;
     }
 
