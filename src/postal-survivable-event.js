@@ -41,6 +41,22 @@
         return publish.apply(this, arguments);
     }
 
+    postal.document.clear = function (e){
+        if (e){
+            var  channel = e.channel || postal.configuration.DEFAULT_CHANNEL;
+            var topic = e.topic;
+            if (topic){
+                delete plugin.store[channel][topic];
+            }
+            else {
+                delete plugin.store[channel];
+            }
+        }
+        else {
+            plugin.store = {};
+        }
+    }
+
     var oldSubscribe = postal.subscribe;
     postal.subscribe = function (options) {
         var subscription = oldSubscribe.apply(this, arguments);
